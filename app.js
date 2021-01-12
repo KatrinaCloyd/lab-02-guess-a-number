@@ -15,17 +15,26 @@ console.log(winningNumber);
 // set event listeners to update state and DOM
 guessBtn.addEventListener('click', () => {
     remainGuessState--;
-    let userGuess = numberInput.value;
     remainingGuesses.textContent = `You have ${remainGuessState} guesses remaining!`;
+    let userGuess = numberInput.value;
     let didTheyWin = compareNumbers(userGuess, winningNumber);
     if (didTheyWin === 0) {
-        highLowWrong.textContent = `Winner Winner Chicken Dinner!`;
+        highLowWrong.textContent = `Winner Winner Chicken Dinner! It was ${winningNumber}!`;
+        remainingGuesses.hidden = true;
+        numberInput.disabled = true;
+        guessBtn.disabled = true;
     }
     else if (didTheyWin === -1) {
         highLowWrong.textContent = `Too low, go higher!`;
     }
-    else if (didTheyWin === 1) {
+    else {
         highLowWrong.textContent = `Too high, go lower!`;
+    }
+    if (remainGuessState === 0 && didTheyWin !== 0) {
+        highLowWrong.textContent = `That was your last try. YOU LOSE!`;
+        remainingGuesses.hidden = true;
+        numberInput.disabled = true;
+        guessBtn.disabled = true;
     }
 
 });
