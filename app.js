@@ -7,7 +7,6 @@ const remainingGuesses = document.getElementById('remainingGuesses');
 const highLowWrong = document.getElementById('highLowWrong');
 const tryAgain = document.getElementById('tryAgain');
 
-
 // initialize state
 let winningNumber = Math.ceil(Math.random() * 20);
 let remainGuessState = 4;
@@ -24,6 +23,7 @@ guessBtn.addEventListener('click', () => {
         remainingGuesses.hidden = true;
         numberInput.disabled = true;
         guessBtn.disabled = true;
+        document.body.style.backgroundColor = 'PaleTurquoise';
     }
     else if (didTheyWin === -1) {
         highLowWrong.textContent = `Too low, go higher!`;
