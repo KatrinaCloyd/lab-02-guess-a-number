@@ -78,6 +78,9 @@ header img {
     height: var(--header-height);
 }
 
+#tryAgain{
+    visibility: hidden;
+}
 
 
 content {
