@@ -20,7 +20,6 @@ JS set up:
     -event listener to button 
         guess decrement by 1 -- 
         store user guess in a varialble
-             ( 'Number(someinput.value') )
         deterine if low, high or correct
             compare use guess with random number 
             if = to # - textContent YOU WIN! and disable input
