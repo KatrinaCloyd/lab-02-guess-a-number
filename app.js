@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { compareNumbers, hideResultInfo } from './utils.js';
+import { compareNumbers, hideResultInfo, showResultInfo } from './utils.js';
 
 const numberInput = document.getElementById('numberInput');
 const guessBtn = document.getElementById('guessBtn');
@@ -44,9 +44,7 @@ tryAgain.addEventListener('click', () => {
     remainingGuesses.textContent = `You have ${remainGuessState} guesses remaining!`;
     document.body.style.backgroundColor = 'White';
 
-    remainingGuesses.hidden = false;
-    numberInput.disabled = false;
-    guessBtn.disabled = false;
+    showResultInfo();
 
     tryAgain.style.visibility = 'hidden';
     highLowWrong.textContent = `Give it another go!`;

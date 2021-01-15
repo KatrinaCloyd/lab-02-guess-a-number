@@ -16,3 +16,10 @@ export function hideResultInfo() {
     numberInput.disabled = true;
     guessBtn.disabled = true;
 }
+
+export function showResultInfo() {
+
+    remainingGuesses.hidden = false;
+    numberInput.disabled = false;
+    guessBtn.disabled = false;
+}
